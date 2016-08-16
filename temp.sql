@@ -8,4 +8,4 @@
 -- );
 
 insert into users(name, age, job, height)
-  value('alex', 30, 'developer', 6);
+  values('alex', 30, 'developer', 6);
