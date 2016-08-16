@@ -26,5 +26,14 @@ module.exports = {
   },
 
   readUser: function(req, res, next) {
-  }
+    db.read_user(function(error, response) {
+      if(error) {
+        res.json(error);
+      }
+      else {
+        console.log('read singular');
+        res.json(response);
+      }
+    }
+  )}
 };
