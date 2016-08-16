@@ -15,6 +15,18 @@ var massiveInstance = massive.connectSync({connectionString : connectionString})
 app.set("db", massiveInstance); // setting the "db" obj to equal th massive.connectSync
 var db = app.get("db"); // setting var db to app.get "db
 
+
+//this has to be after our db connections above (var connectionString, massiveInstance, etc)
+var userCtrl = require('./userCtrl.js');
+
+
+//start endpoints
+app.get('/me', function() {
+  console.log('success!');
+})
+
+//end endpoints
+
 // app.listen(3030);
 
 var port = 3030;
