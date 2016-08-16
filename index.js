@@ -8,11 +8,16 @@ var massive = require('massive');
 
 //after you created db and made your temp.sql file, run this: psql -f temp.sql;
 
-var app = express();
+var app = module.exports = express();
 
 var connectionString = "postgress://aleeexkang@localhost/sql_massive_node"; // "postgess://username/host/databaseName"
 var massiveInstance = massive.connectSync({connectionString : connectionString}); // who knows
 app.set("db", massiveInstance); // setting the "db" obj to equal th massive.connectSync
 var db = app.get("db"); // setting var db to app.get "db
 
-app.listen(3030);
+// app.listen(3030);
+
+var port = 3030;
+app.listen(port, function() {
+  console.log('listening on port', port);
+});
