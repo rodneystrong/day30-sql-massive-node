@@ -19,11 +19,14 @@ var db = app.get("db"); // setting var db to app.get "db
 //this has to be after our db connections above (var connectionString, massiveInstance, etc)
 var userCtrl = require('./userCtrl.js');
 
-
 //start endpoints
-app.get('/me', function() {
-  console.log('success!');
-})
+// app.get('/me', function(req, res, next) {
+//   console.log('success!');
+//   res.send('hey postman! ;D');
+// })
+
+app.get('/users', userCtrl.readUsers);
+
 
 //end endpoints
 
