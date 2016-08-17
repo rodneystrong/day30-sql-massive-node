@@ -26,7 +26,7 @@ module.exports = {
   },
 
   readUser: function(req, res, next) {
-    db.read_user(function(error, response) {
+    db.read_user(req.params.id, function(error, response) {
       if(error) {
         res.json(error);
       }
