@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/rodneystrong/day30-sql-massive-node/issues"
   },
-  "homepage": "https://github.com/rodneystrong/day30-sql-massive-node#readme"
+  "homepage": "https://github.com/rodneystrong/day30-sql-massive-node#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "massive": "^2.5.0"
+  }
 }
