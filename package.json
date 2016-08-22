@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/rodneystrong/day30-sql-massive-node#readme",
   "dependencies": {
+<<<<<<< HEAD
     "body-parser": "^1.15.2",
     "cors": "^2.7.1",
+=======
+>>>>>>> practice1
     "express": "^4.14.0",
     "massive": "^2.5.0"
   }
