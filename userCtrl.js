@@ -30,5 +30,26 @@ module.exports = {
     })
 
 
+  },
+
+  createData: function(req,res) {
+    //massive.js call
+    console.log(req.body.name);
+    var bodyInput = req.body.name;
+
+    //insert update save methods built into massive are better than using
+    //stupid sql queries
+
+    //this right here goes to the 'user' table, uses 'insert' which always requires
+    //an object. so here name: is the column and bodyInput is what we get
+    //from the user.
+    db.users.insert({name: bodyInput}, function(error,response) {
+      if (error) {
+        res.send(error);
+      }
+      else {
+        res.send(response);
+      }
+    })
   }
 }

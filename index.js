@@ -25,6 +25,7 @@ var userCtrl = require('./userCtrl.js');
 // })
 
 app.get('/users', userCtrl.readUsers);
+app.post('/users', userCtrl.createData);
 
 app.listen(3030, function() {
   console.log('lel');

@@ -9,4 +9,11 @@ angular
         $scope.data = response;
       });
     }
+
+    $scope.createData = function(newInfo) {
+      mainService.createData(newInfo).then(function(response) {
+        $scope.data = response;
+      });
+    }
+
   });
