@@ -5,6 +5,8 @@ angular
       return $http.get('/users')
         .then(function(response) {
           console.log('mainService response!');
+          console.log(response.status);
+          console.log(response.data);
           return response;
         })
     }
