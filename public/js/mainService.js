@@ -6,7 +6,7 @@ angular
         .then(function(response) {
           console.log('mainService response!');
           console.log(response.status);
-          console.log(response.data);
+          console.log(response.data[0].name);
           return response;
         })
     }
