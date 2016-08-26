@@ -6,7 +6,11 @@ var bodyParser = require('body-parser');
 var app = module.exports = express();
 
 //created database by running CREATE DATABASE yourdbname;  dont forget that fucking semicolon
+app.use(bodyParser.json());
+app.use(cors());
 
+//make node serve our files
+app.use(express.static(__dirname + '/public'));
 
 var connectionString = "postgress://aleeexkang@localhost/sql_practice1"; // "postgess://username/host/databaseName"
 var massiveInstance = massive.connectSync({connectionString : connectionString}); // who knows
