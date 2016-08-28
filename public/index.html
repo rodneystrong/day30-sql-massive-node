@@ -16,7 +16,7 @@
   <div class="info">
     <div>
       <p>
-        ID: <span ng-bind="data.data[0].id"></span>
+        ID: <span ng-bind="{{data.data[0].id}}"></span>
       </p>
     </div>
     <div>
@@ -33,10 +33,17 @@
   </div>
   <!-- Create the parameter of 'newInfo' here that will interface with the
        method in the angular service (in this case, 'createData').  -->
-  <input ng-model="newInfo" type="text" name="name" value="">
-  <input ng-click="createData(newInfo)" type="button" value="Oh man use me!">
+  <div>
+    <input ng-model="newInfo" type="text" name="name" value="" placeholder="name">
+  </div>
+  <div>
+    <input ng-model="newAge" type="text" name="age" value="" placeholder="age">
+  </div>
+    <!-- <input ng-model="newInfo" type="text" name="job" value="">
+    <input ng-model="newInfo" type="text" name="height" value=""> -->
+    <input ng-click="createData(newInfo, newAge)" type="button" value="Oh man use me!">
 
-  
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
   <script src="js/app.js"></script>
