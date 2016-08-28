@@ -10,7 +10,7 @@ angular
           console.log(response.status);
           console.log(response.data[1]);
           console.log(response.data[0]);
-          return response;
+          return response.data;
         })
     }
 
@@ -57,4 +57,7 @@ angular
         }
       })
     }
+
+
+
 })

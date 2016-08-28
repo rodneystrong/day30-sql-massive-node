@@ -35,7 +35,7 @@ module.exports = {
   createData: function(req,res) {
     //massive.js calls
     console.log(req.body.name);
-    var bodyInput = req.body.name;
+    var bodyName = req.body.name;
     console.log(req.body.age);
     var bodyAge = req.body.age;
 
@@ -43,9 +43,9 @@ module.exports = {
     //stupid sql queries
 
     //this right here goes to the 'user' table, uses 'insert' which always requires
-    //an object. so here name: is the column and bodyInput is what we get
+    //an object. so here name: is the column and bodyName is what we get
     //from the user.
-    db.users.insert({name: bodyInput, age: bodyAge}, function(error,response) {
+    db.users.insert({name: bodyName, age: bodyAge}, function(error,response) {
       if (error) {
         res.send(error);
       }
