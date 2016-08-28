@@ -10,6 +10,7 @@ angular
           console.log(response.status);
           console.log(response.data[1]);
           console.log(response.data[0]);
+          console.log(response.data);
           return response.data;
         })
     }
@@ -42,22 +43,15 @@ angular
       })
     }
 
-    this.deleteData = function(itemId) {
-      var promise = $http({
+    //DELETE
+    this.deleteData = function(id) {
+      return $http({
         method: 'DELETE',
-        url: ('/users' + 'itemId')
+        url: ('/users/' + id)
       })
-      promise.then(function(response) {
-        return response.data;
-      }, function(error) {
-        if(response.status === 200) {
-          return response.data;
-        } else {
-          throw 'shit happens';
-        }
+      .then(function(response) {
+        return response;
       })
     }
-
-
 
 })
