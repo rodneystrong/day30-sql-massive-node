@@ -39,4 +39,20 @@ angular
         return response.data;
       })
     }
+
+    this.deleteData = function(itemId) {
+      var promise = $http({
+        method: 'DELETE',
+        url: ('/users' + 'itemId')
+      })
+      promise.then(function(response) {
+        return response.data;
+      }, function(error) {
+        if() {
+
+        } else {
+          throw 'shit happens';
+        }
+      })
+    }
 })
