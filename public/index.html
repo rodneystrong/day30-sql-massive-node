@@ -13,22 +13,24 @@
   <!-- <div>{{whatevs}}</div> -->
 
   <button ng-click="getData()" type="button" name="button" autofocus>CLICK ME MIKEEEY!!!</button>
-  <div class="info">
-    <div>
-      <p>
-        ID: <span ng-bind="{{data.data[0].id}}"></span>
-      </p>
-    </div>
-    <div>
-      <p>
-        Say my name say my naaaame: {{data.data[0].name}}
-      </p>
-      <p>
-        How old? {{data.data[0].age}}
-      </p>
-      <p>
+  <div class="grid-box">
+    <div ng-repeat="item in data" class="info">
+      <div>
+        <p>
+          <span class="item-label">ID:</span> <span ng-bind="item.id"></span>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span class="item-label">Say my name say my naaaame:</span> <span ng-bind="item.name"</span>
+        </p>
+        <p>
+          <span class="item-label">How old?</span> {{item.age}}
+        </p>
+        <p>
 
-      </p>
+        </p>
+      </div>
     </div>
   </div>
   <!-- Create the parameter of 'newInfo' here that will interface with the
