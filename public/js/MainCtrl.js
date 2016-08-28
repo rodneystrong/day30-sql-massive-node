@@ -4,15 +4,24 @@ angular
     $scope.whatevs = 'whatevs';
     console.log($scope.whatevs);
 
+    //READ/GET
     $scope.getData = function() {
       mainService.getData().then(function(response) {
         $scope.data = response;
       });
     }
 
-    $scope.createData = function(newInfo) {
-      mainService.createData(newInfo).then(function(response) {
+    //CREATE/POST
+    $scope.createData = function(newInfo, newAge) {
+      mainService.createData(newInfo, newAge).then(function(response) {
         $scope.data = response;
+      });
+    }
+
+    //DELETE
+    $scope.deleteData = function(id) {
+      mainService.deleteData(id).then(function(response) {
+        $scope.getData();
       });
     }
 

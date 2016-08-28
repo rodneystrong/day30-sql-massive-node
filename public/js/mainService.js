@@ -8,8 +8,10 @@ angular
         .then(function(response) {
           console.log('mainService response!');
           console.log(response.status);
+          console.log(response.data[1]);
           console.log(response.data[0]);
-          return response;
+          console.log(response.data);
+          return response.data;
         })
     }
 
@@ -25,14 +27,15 @@ angular
     //  });
     // };
     //
-    this.createData = function(newInfo) {
-      console.log(newInfo);
-      console.log(typeof(newInfo));
+    this.createData = function(newInfo, newAge) {
+      console.log(newInfo, newAge);
+      console.log(typeof(newInfo, newAge));
       return $http({
         method: 'POST',
         url: '/users',
         data: {
-          name: newInfo
+          name: newInfo,
+          age: newAge
         }
       })
       .then(function(response) {
@@ -40,19 +43,15 @@ angular
       })
     }
 
-    this.deleteData = function(itemId) {
-      var promise = $http({
+    //DELETE
+    this.deleteData = function(id) {
+      return $http({
         method: 'DELETE',
-        url: ('/users' + 'itemId')
+        url: ('/users/' + id)
       })
-      promise.then(function(response) {
-        return response.data;
-      }, function(error) {
-        if() {
-
-        } else {
-          throw 'shit happens';
-        }
+      .then(function(response) {
+        return response;
       })
     }
+
 })

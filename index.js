@@ -26,6 +26,7 @@ var userCtrl = require('./userCtrl.js');
 
 app.get('/users', userCtrl.readUsers);
 app.post('/users', userCtrl.createData);
+app.delete('/users/:id', userCtrl.deleteData);
 
 app.listen(3030, function() {
   console.log('lel');
