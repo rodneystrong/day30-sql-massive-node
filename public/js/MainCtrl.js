@@ -10,8 +10,8 @@ angular
       });
     }
 
-    $scope.createData = function(newInfo) {
-      mainService.createData(newInfo).then(function(response) {
+    $scope.createData = function(newInfo, newAge) {
+      mainService.createData(newInfo, newAge).then(function(response) {
         $scope.data = response;
       });
     }
