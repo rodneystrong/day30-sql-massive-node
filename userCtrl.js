@@ -1,8 +1,6 @@
 //export an object with 5 functions
 //create, getOne, getAll, update, delete
-
 var app = require('./index.js');
-
 var db = app.get('db');
 
 module.exports = {
@@ -28,8 +26,6 @@ module.exports = {
         res.json(response);
       }
     })
-
-
   },
 
   createData: function(req,res) {
@@ -46,6 +42,22 @@ module.exports = {
     //an object. so here name: is the column and bodyName is what we get
     //from the user.
     db.users.insert({name: bodyName, age: bodyAge}, function(error,response) {
+      if (error) {
+        res.send(error);
+      }
+      else {
+        res.send(response);
+      }
+    })
+  },
+
+  deleteData: function(req,res) {
+    //massive.js calls
+    console.log(req.params.id);
+    var bodyItem = req.params.id;
+
+    db.users.destroy({id: bodyItem}, function(error,response) {
+      console.log(response);
       if (error) {
         res.send(error);
       }
