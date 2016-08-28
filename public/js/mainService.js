@@ -48,8 +48,8 @@ angular
       promise.then(function(response) {
         return response.data;
       }, function(error) {
-        if() {
-
+        if(response.status === 200) {
+          return response.data;
         } else {
           throw 'shit happens';
         }
